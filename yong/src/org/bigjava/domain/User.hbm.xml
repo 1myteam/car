@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC 
+"-//Hibernate/Hibernate Mapping DTD 3.0//EN" 
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+ <hibernate-mapping>
+  <class name="org.bigjava.domain.User" table="user">
+     <id name="user_id" column="user_id" length="10">
+     <generator class="native"/>
+     </id>
+  <property name="account" column="account" length="45"/>
+  <property name="password" column="password" length="45"/>
+  <property name="name" column="name" length="45"/>
+  <property name="wallet" column="wallet" length="15"/>
+  <property name="six" column="six" length="20"/>
+  <property name="idCard" column="idCard" length="45"/>
+  <property name="phone" column="phone" length="45"/>
+  <property name="drive" column="drive" length="45"/>
+  <property name="email" column="email" length="45"/>
+  <property name="address" column="address" length="45"/>
+  
+  
+  </class>
+ </hibernate-mapping>
