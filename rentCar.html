@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<title></title>
+		<script type="text/javascript" src="js/jquery-3.3.1.min.js"></script>
+		<script type="text/javascript">
+			$(document).ready(function(){
+				$("#all").css("color","#EB5B00");
+				$("a").click(function(){
+					$("a").css("color","black").siblings()
+					.css("color","#EB5B00");
+					$(this).css("color","#EB5B00").siblings()
+					.css("color","black");
+				});
+			});
+		</script>
+		<style type="text/css">
+			.one{
+				width:100%;
+			}
+			.two{
+				width:60%;
+				height:65px;
+				border:1px solid #F5F5F5;
+				background-color:#F5F5F5;
+				margin: 0 auto;
+			}
+			.three{
+				width:60%;
+				height:80px;
+				border:1px solid #D9D9D9;
+				margin: 0 auto;
+				text-align: -moz-center;
+			}
+			.four{
+				width:60%;
+				height:50px;
+				border:1px solid #D9D9D9;
+				margin: 0 auto;
+				line-height: 50px;
+				text-indent: 30px;
+			}
+			.five{
+				width:60%;
+				height:30px;
+				border:1px solid #D9D9D9;
+				background-color:#F5F5F5;
+				margin: 8px auto;
+				text-align:center;
+				font-size: 16px;
+			}
+			a{
+				text-decoration: none;
+				color:black;
+			}
+			a:hover{
+				color:#EB5B00;
+			}
+			#anniu{
+				width:12%;
+				height:32px;
+				background:#F5F5F5;
+				border:1px solid #D9D9D9;
+				margin:-1px 0px 0px -1px;
+				float:left;
+				cursor: pointer;
+			}
+			.car{
+				width:60%;
+				height:120px;
+				border:1px solid #D9D9D9;
+				margin:0 auto;
+			}
+			.photo{
+				width:20%;
+				height:100%;
+				float:left;
+				text-align:center;
+				padding-top:10px;
+			}
+			.word{
+				width:30%;
+				height:100%;
+				float:left;
+				text-align: center;
+				line-height: 30px;
+			}
+			.price{
+				width:30%;
+				height:100%;
+				float:left;
+			}
+			.sub{
+				width:20%;
+				height:100%;
+				float:left;
+				text-align: center;
+				line-height: 110px;
+			}
+			.car .word .name{
+				font-size: 22px;
+				line-height: 28px;
+				font-weight: bolder;
+				text-indent: 1em;
+			}
+			.car .word .oth{
+				font-size: 12px;
+				line-height: 0px;
+				text-indent: 1em;
+			}
+			.car .price .rmb{
+				display: inline-block;
+				font-size:35px;
+				color:#EB5B00;
+				line-height: 100px;
+			}
+			.car .price .num{
+				display: inline-block;
+				font-size:35px;
+				color:#EB5B00;
+				line-height: 100px;
+			}
+		</style>
+	</head>
+	<body>
+		<div class="one">
+			<div class="two">
+				<table border="0" width="100%" height="100%" >
+					<tr>
+						<td>取车门店：<input type="text" size="5" name="pick"/>
+						<input type="text" name="paddress"/></td>
+						<td>取车时间：<input type="date" />
+						<select size="1">
+							<option>08时</option><option>09时</option>
+							<option>10时</option><option>11时</option>
+							<option>12时</option><option>13时</option>
+							<option>14时</option><option>15时</option>
+							<option>16时</option><option>17时</option>
+							<option>18时</option><option>19时</option>
+							<option>20时</option><option>21时</option>
+						</select>
+						<select size="1">
+							<option>00分</option><option>05分</option>
+							<option>10分</option><option>15分</option>
+							<option>20分</option><option>25分</option>
+							<option>30分</option><option>35分</option>
+							<option>40分</option><option>45分</option>
+							<option>50分</option><option>55分</option>
+						</select></td>
+						<td rowspan="2">
+							<input type="button" name="vague" value="查询" 
+				            style="width:90px;height:35px;background-color:#EB5B00;
+				            color:white;border:0;cursor: pointer;"/>
+						</td>
+					</tr>
+					<tr>
+						<td>还车门店：<input type="text" size="5" name="return"/>
+						<input type="text" name="raddress"/></td>
+						<td>还车时间：<input type="date" />
+						<select size="1">
+							<option>08时</option><option>09时</option>
+							<option>10时</option><option>11时</option>
+							<option>12时</option><option>13时</option>
+							<option>14时</option><option>15时</option>
+							<option>16时</option><option>17时</option>
+							<option>18时</option><option>19时</option>
+							<option>20时</option><option>21时</option>
+						</select>
+						<select size="1">
+							<option>00分</option><option>05分</option>
+							<option>10分</option><option>15分</option>
+							<option>20分</option><option>25分</option>
+							<option>30分</option><option>35分</option>
+							<option>40分</option><option>45分</option>
+							<option>50分</option><option>55分</option>
+						</select></td>
+					</tr>
+				</table>
+			</div>
+			<div class="three">
+				<table border="0" width="100%" height="100%" >
+					<tr>
+						<td style="text-align: center;width:10%;">品牌:</td>
+						<td><a href="#" id="all">全部</a></td>
+						<td><a href="#">丰田</a></td>
+						<td><a href="#">本田</a></td>
+						<td><a href="#">东风</a></td>
+						<td><a href="#">别克</a></td>
+						<td><a href="#">福特</a></td>
+						<td><a href="#">雪佛兰</a></td>
+						<td><a href="#">奔驰</a></td>
+						<td><a href="#">宝马</a></td>
+						<td><a href="#">奥迪</a></td>
+						<td><a href="#">保时捷</a></td>
+					</tr>
+					<tr>
+						<td></td><td><a href="#">铃木</a></td>
+						<td><a href="#">长安</a></td>
+						<td><a href="#">奔腾</a></td>
+						<td><a href="#">中华</a></td>
+						<td><a href="#">奇瑞</a></td>
+						<td><a href="#">传祺</a></td>
+						<td><a href="#">雪铁龙</a></td>
+						<td><a href="#">吉利</a></td>
+						<td><a href="#">现代</a></td>
+						<td><a href="#">大众</a></td>
+						<td></td>
+					</tr>
+				</table>
+			</div>
+			<div class="four">
+			</div>
+			<div class="five">
+				<input type="button" id="anniu" value="默认排序" />
+				<input type="button" id="anniu" value="按租金" />
+				<input type="button" id="anniu" value="按排量" />
+			</div>
+			<div class="car">
+				<div class="photo" >
+					<img src="img/567.jpg" style="width:150px;height:100px;"/>
+				</div>
+				<div class="word">
+					<p class="name">雪佛兰科鲁兹</p>
+					<p class="oth">三厢|1.5自动|乘坐5人</p>
+				</div>
+				<div class="price">
+					<span>
+						<em class="rmb">￥</em>
+						<em class="num">200</em>
+						<em class="date">/日</em>
+					</span>
+				</div>
+				<div class="sub">
+					<input type="button" name="submission" value="租车" 
+						style="width:100px;height:39px;border:0;background:#EB5B00;
+						color:white;font-size: 20px;cursor:pointer;"/>
+				</div>
+			</div>
+		</div>
+	</body>
+</html>
